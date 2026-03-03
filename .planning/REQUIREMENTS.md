@@ -104,53 +104,53 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLI-01 | — | Pending |
-| CLI-02 | — | Pending |
-| CLI-03 | — | Pending |
-| CLI-04 | — | Pending |
-| CLI-05 | — | Pending |
-| CLI-06 | — | Pending |
-| CLI-07 | — | Pending |
-| CONT-01 | — | Pending |
-| CONT-02 | — | Pending |
-| CONT-03 | — | Pending |
-| CONT-04 | — | Pending |
-| CONT-05 | — | Pending |
-| CONT-06 | — | Pending |
-| CONT-07 | — | Pending |
-| CONT-08 | — | Pending |
-| DOM-01 | — | Pending |
-| DOM-02 | — | Pending |
-| DOM-03 | — | Pending |
-| DOM-04 | — | Pending |
-| DOM-05 | — | Pending |
-| DOM-06 | — | Pending |
-| DEPL-01 | — | Pending |
-| DEPL-02 | — | Pending |
-| DEPL-03 | — | Pending |
-| DEPL-04 | — | Pending |
-| DEPL-05 | — | Pending |
-| DEPL-06 | — | Pending |
-| DEPL-07 | — | Pending |
-| NET-01 | — | Pending |
-| NET-02 | — | Pending |
-| NET-03 | — | Pending |
-| NET-04 | — | Pending |
-| NET-05 | — | Pending |
-| BUDG-01 | — | Pending |
-| BUDG-02 | — | Pending |
-| BUDG-03 | — | Pending |
-| BUDG-04 | — | Pending |
-| AUTO-01 | — | Pending |
-| AUTO-02 | — | Pending |
-| AUTO-03 | — | Pending |
-| AUTO-04 | — | Pending |
+| CLI-01 | Phase 1 | Pending |
+| CLI-04 | Phase 1 | Pending |
+| CLI-05 | Phase 1 | Pending |
+| CLI-06 | Phase 1 | Pending |
+| CLI-07 | Phase 1 | Pending |
+| BUDG-01 | Phase 1 | Pending |
+| BUDG-02 | Phase 1 | Pending |
+| BUDG-03 | Phase 1 | Pending |
+| BUDG-04 | Phase 1 | Pending |
+| CONT-01 | Phase 2 | Pending |
+| CONT-02 | Phase 2 | Pending |
+| CONT-03 | Phase 2 | Pending |
+| CONT-04 | Phase 2 | Pending |
+| CONT-05 | Phase 2 | Pending |
+| CONT-06 | Phase 2 | Pending |
+| CONT-07 | Phase 2 | Pending |
+| CONT-08 | Phase 2 | Pending |
+| DOM-01 | Phase 3 | Pending |
+| DOM-02 | Phase 3 | Pending |
+| DOM-03 | Phase 3 | Pending |
+| DOM-04 | Phase 3 | Pending |
+| DOM-05 | Phase 3 | Pending |
+| DOM-06 | Phase 3 | Pending |
+| DEPL-01 | Phase 4 | Pending |
+| DEPL-02 | Phase 4 | Pending |
+| DEPL-03 | Phase 4 | Pending |
+| DEPL-04 | Phase 4 | Pending |
+| DEPL-05 | Phase 4 | Pending |
+| DEPL-06 | Phase 4 | Pending |
+| DEPL-07 | Phase 4 | Pending |
+| NET-01 | Phase 5 | Pending |
+| NET-02 | Phase 5 | Pending |
+| NET-03 | Phase 5 | Pending |
+| NET-04 | Phase 5 | Pending |
+| NET-05 | Phase 5 | Pending |
+| CLI-02 | Phase 6 | Pending |
+| CLI-03 | Phase 6 | Pending |
+| AUTO-01 | Phase 6 | Pending |
+| AUTO-02 | Phase 6 | Pending |
+| AUTO-03 | Phase 6 | Pending |
+| AUTO-04 | Phase 6 | Pending |
 
 **Coverage:**
 - v1 requirements: 40 total
-- Mapped to phases: 0
-- Unmapped: 40 ⚠️
+- Mapped to phases: 40
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-02*
-*Last updated: 2026-03-02 after initial definition*
+*Last updated: 2026-03-02 after roadmap creation*
