@@ -40,14 +40,20 @@ program
     }
   });
 
-// Budget command (stub for Plan 03)
+// Budget command
 program
   .command('budget')
   .description('Show spending breakdown and projections')
   .option('--json', 'Output as JSON')
   .option('-q, --quiet', 'Suppress non-essential output')
-  .action(async () => {
-    console.log('Budget command coming soon');
+  .action(async (options) => {
+    try {
+      const { budgetCommand } = await import('./commands/budget.js');
+      await budgetCommand(options);
+    } catch (error) {
+      console.error('Error:', error instanceof Error ? error.message : String(error));
+      process.exit(1);
+    }
   });
 
 // Global error handler
