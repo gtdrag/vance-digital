@@ -80,14 +80,17 @@ export async function estimateApiCosts(
   const past30DaysISO = past30Days.toISOString();
 
   // Get all API transactions from past 30 days
-  const result = await db
+  // Filter by API categories: api_anthropic, api_reddit, api_google, api_vercel
+  const transactions = await db
     .selectFrom('transactions')
-    .select(({ fn }) => fn.sum<number>('amount_usd').as('total'))
+    .select(['amount_usd', 'category'])
     .where('created_at', '>=', past30DaysISO)
-    .where('category', 'like', 'api_%')
-    .executeTakeFirst();
+    .execute();
 
-  const past30DaysTotal = result?.total ?? 0;
+  // Sum only API transactions (categories starting with 'api_')
+  const past30DaysTotal = transactions
+    .filter((t) => t.category.startsWith('api_'))
+    .reduce((sum, t) => sum + t.amount_usd, 0);
 
   if (past30DaysTotal === 0) {
     return 0;
