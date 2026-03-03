@@ -7,10 +7,10 @@
 
 ### CLI Foundation
 
-- [ ] **CLI-01**: User can run `domainweave init` to create config file and SQLite database
+- [x] **CLI-01**: User can run `domainweave init` to create config file and SQLite database
 - [ ] **CLI-02**: User can run `domainweave run` to execute full pipeline (scrape → verify → acquire → deploy → link)
 - [ ] **CLI-03**: User can run `domainweave run --dry-run` to preview actions without executing
-- [ ] **CLI-04**: User can run `domainweave status` to see network stats (sites, memes, domains, spend)
+- [x] **CLI-04**: User can run `domainweave status` to see network stats (sites, memes, domains, spend)
 - [x] **CLI-05**: User can run `domainweave budget` to see spending breakdown by category
 - [x] **CLI-06**: All operations log to stdout with configurable verbosity levels
 - [x] **CLI-07**: Config stored in `config.json` with registrar keys, Vercel token, budget caps, scraping prefs
@@ -104,8 +104,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CLI-01 | Phase 1 | Pending |
-| CLI-04 | Phase 1 | Pending |
+| CLI-01 | Phase 1 | Complete |
+| CLI-04 | Phase 1 | Complete |
 | CLI-05 | Phase 1 | Complete |
 | CLI-06 | Phase 1 | Complete |
 | CLI-07 | Phase 1 | Complete |
