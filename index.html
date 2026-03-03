@@ -3,35 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vance.digital</title>
+  <title>vance.digital — Digital Creativity Studio</title>
+  <meta name="description" content="vance.digital builds software, multimedia, and creative technology products.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
+      background: #0a0a0a;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: #fff; text-decoration: none; }
+    a:hover { color: #aaa; }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav-brand {
+      font-size: 1.2rem;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand span { color: #555; }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    /* Sections */
+    section {
+      padding: 8rem 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0a0a0a;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      cursor: pointer;
-      -webkit-user-select: none;
-      user-select: none;
-    }
-    .content {
       text-align: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .hero-content {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-    h1 {
+
+    .hero h1 {
       font-size: clamp(3rem, 12vw, 10rem);
       font-weight: 200;
-      color: #fff;
       letter-spacing: -0.03em;
+      line-height: 1;
     }
-    h1 span { color: #555; }
-    p {
+
+    .hero h1 span { color: #555; }
+
+    .hero p {
       font-size: clamp(0.9rem, 2vw, 1.3rem);
       font-weight: 300;
       color: #444;
@@ -39,48 +105,286 @@
       text-transform: uppercase;
       margin-top: 1.5rem;
     }
-    .fade-out { animation: fadeOut 0.6s cubic-bezier(0.55, 0, 1, 0.45) forwards; }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    /* About */
+    .about {
+      border-top: 1px solid #1a1a1a;
     }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .about-text {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      color: #ccc;
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    /* Products */
+    .products {
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .product-card {
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .product-card:hover {
+      border-color: #333;
+      transform: translateY(-2px);
+    }
+
+    .product-card h3 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+
+    .product-card .product-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      border: 1px solid #333;
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .product-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      color: #fff;
+      border-bottom: 1px solid #333;
+      padding-bottom: 2px;
+      transition: border-color 0.3s;
+    }
+
+    .product-link:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* Contact */
+    .contact {
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .contact-text {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-email {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid #333;
+      padding-bottom: 4px;
+      transition: border-color 0.3s;
+    }
+
+    .contact-email:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* Payment Info */
+    .payment-info {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .payment-info p {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 3rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #444;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #555;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: #fff; }
+
+    /* Animations */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes fadeOut {
-      to { opacity: 0; transform: translateY(-20px); }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .nav-links a { font-size: 0.75rem; }
+      section { padding: 5rem 1.5rem; }
+      .product-grid { grid-template-columns: 1fr; }
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
     }
   </style>
 </head>
 <body>
-  <div class="content" id="content">
-    <h1>vance<span>.digital</span></h1>
-  </div>
-  <script>
-    const pages = [
-      '<h1>vance<span>.digital</span></h1>',
-      '<p>Something exciting is coming soon</p>'
-    ];
-    let current = 0;
-    const el = document.getElementById('content');
 
-    document.body.addEventListener('click', () => {
-      el.classList.add('fade-out');
-      el.addEventListener('animationend', function swap() {
-        el.removeEventListener('animationend', swap);
-        current = (current + 1) % pages.length;
-        el.innerHTML = pages[current];
-        el.classList.remove('fade-out');
-        el.classList.remove('content');
-        void el.offsetWidth;
-        el.classList.add('fade-in');
-        el.addEventListener('animationend', function done() {
-          el.removeEventListener('animationend', done);
-          el.classList.remove('fade-in');
-        });
+  <nav>
+    <a href="#" class="nav-brand">vance<span>.digital</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>vance<span>.digital</span></h1>
+      <p>Digital Creativity Studio</p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container fade-section">
+      <div class="section-label">About</div>
+      <p class="about-text">
+        vance.digital is a digital creativity studio that builds software, multimedia experiences, and creative technology products. We combine engineering with design to craft tools that are useful, thoughtful, and fun.
+      </p>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="container fade-section">
+      <div class="section-label">Products</div>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <h3>Roto Agent</h3>
+          <div class="product-tag">AI &middot; Fantasy Sports</div>
+          <p>AI-powered fantasy baseball assistant built for Yahoo Roto leagues. Features live draft AI, mock drafts, and a daily lineup optimizer to keep your roster competitive all season.</p>
+          <a href="https://rotogpt.app" target="_blank" rel="noopener" class="product-link">Visit rotogpt.app &rarr;</a>
+        </div>
+
+        <div class="product-card">
+          <h3>Vinyl Vision</h3>
+          <div class="product-tag">Smart Glasses &middot; Music</div>
+          <p>Smart glasses companion app that scans vinyl record covers and delivers real-time pricing alerts. Built for Meta Ray-Ban glasses so you can spot deals while browsing the crates.</p>
+          <span class="product-link" style="color:#555; border-color:#1a1a1a; cursor:default;">Coming soon</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container fade-section">
+      <div class="section-label">Contact</div>
+      <p class="contact-text">Questions, support, or just want to say hello?</p>
+      <a href="mailto:support@vance.digital" class="contact-email">support@vance.digital</a>
+
+      <div class="payment-info">
+        <p>All payments are securely processed through Stripe. We never store your credit card information on our servers. For billing questions or refund requests, reach out to <a href="mailto:support@vance.digital" style="color:#888; border-bottom:1px solid #333;">support@vance.digital</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-copy">&copy; 2025 vance.digital. All rights reserved.</div>
+      <ul class="footer-links">
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.fade-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
-    });
+    }, { threshold: 0.15 });
+    sections.forEach(s => observer.observe(s));
   </script>
+
 </body>
 </html>
