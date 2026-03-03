@@ -11,7 +11,7 @@
 - [ ] **CLI-02**: User can run `domainweave run` to execute full pipeline (scrape → verify → acquire → deploy → link)
 - [ ] **CLI-03**: User can run `domainweave run --dry-run` to preview actions without executing
 - [ ] **CLI-04**: User can run `domainweave status` to see network stats (sites, memes, domains, spend)
-- [ ] **CLI-05**: User can run `domainweave budget` to see spending breakdown by category
+- [x] **CLI-05**: User can run `domainweave budget` to see spending breakdown by category
 - [x] **CLI-06**: All operations log to stdout with configurable verbosity levels
 - [x] **CLI-07**: Config stored in `config.json` with registrar keys, Vercel token, budget caps, scraping prefs
 
@@ -56,9 +56,9 @@
 ### Budget & State
 
 - [x] **BUDG-01**: SQLite database tracks all domains, memes, deployments, and spending
-- [ ] **BUDG-02**: Monthly spending cap enforced across all categories (domains, API calls)
-- [ ] **BUDG-03**: System alerts when spending reaches 80% of monthly cap
-- [ ] **BUDG-04**: Domain renewal costs tracked and projected for budget planning
+- [x] **BUDG-02**: Monthly spending cap enforced across all categories (domains, API calls)
+- [x] **BUDG-03**: System alerts when spending reaches 80% of monthly cap
+- [x] **BUDG-04**: Domain renewal costs tracked and projected for budget planning
 
 ### Automation
 
@@ -106,13 +106,13 @@
 |-------------|-------|--------|
 | CLI-01 | Phase 1 | Pending |
 | CLI-04 | Phase 1 | Pending |
-| CLI-05 | Phase 1 | Pending |
+| CLI-05 | Phase 1 | Complete |
 | CLI-06 | Phase 1 | Complete |
 | CLI-07 | Phase 1 | Complete |
 | BUDG-01 | Phase 1 | Complete |
-| BUDG-02 | Phase 1 | Pending |
-| BUDG-03 | Phase 1 | Pending |
-| BUDG-04 | Phase 1 | Pending |
+| BUDG-02 | Phase 1 | Complete |
+| BUDG-03 | Phase 1 | Complete |
+| BUDG-04 | Phase 1 | Complete |
 | CONT-01 | Phase 2 | Pending |
 | CONT-02 | Phase 2 | Pending |
 | CONT-03 | Phase 2 | Pending |
