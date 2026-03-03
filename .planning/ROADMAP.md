@@ -18,7 +18,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. State Foundation & CLI Scaffold | 0/0 | Not started | - |
+| 1. State Foundation & CLI Scaffold | 0/3 | Planning complete | - |
 | 2. Content Pipeline | 0/0 | Not started | - |
 | 3. Domain Management | 0/0 | Not started | - |
 | 4. Site Generation & Deployment | 0/0 | Not started | - |
@@ -42,7 +42,12 @@
 4. System logs all operations to stdout with timestamps and severity levels
 5. Config file contains placeholders for API keys (Reddit, Anthropic, Cloudflare, GitHub, Vercel)
 
-**Plans:** TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Foundation: TypeScript scaffold + SQLite database + config + logger
+- [ ] 01-02-PLAN.md — CLI commands: init + status with rich terminal UI
+- [ ] 01-03-PLAN.md — Budget engine (TDD) + budget CLI command with projections
 
 **Research Needed:** No - SQLite with better-sqlite3 and Commander.js CLI patterns are well-documented
 
@@ -165,4 +170,4 @@
 
 ---
 
-*Last updated: 2026-03-02 after roadmap creation*
+*Last updated: 2026-03-03 after Phase 1 planning*
